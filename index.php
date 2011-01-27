@@ -14,14 +14,11 @@
  * - Copy config/config.sample.ini.php to config/config.ini.php
  * - Edit the "app_url" line of the config to point to the URL where you'll
  * 		be installing (or testing) this app.
- * - Copy lib/hydrogen.autoconfig.php into lib/hydrogen.  Sorry-- there's
- * 		really no reason for it to be outside of that folder except for a
- * 		technicality with Git.
  *
  * BEFORE YOU START TURNING THIS STARTER INTO YOUR OWN WEBAPP:
  * - Replace all instances of the namespace 'myapp' with the actual name of
  * 		your application.  This will also require renaming files and folders!
- * - Review lib/hydrogen/hydrogen.autoconfig.php.  The 'autoconfig' file is
+ * - Review config/hydrogen.autoconfig.php.  The 'autoconfig' file is
  * 		full of settings specific to the webapp that, if you were to distribute
  * 		your web application for others to install, should not be changed by
  * 		them.  As such, you will not need to change it in order to run this

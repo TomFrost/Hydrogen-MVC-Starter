@@ -4,8 +4,9 @@
  ***  All rights reserved.
  ***
  ***********************************************
- ***  Config autoloader sample
- ***  Copy this to hydrogen.autoconfig.php
+ ***  This file contains the necessary configuration items for this app to
+ ***  use the Hydrogen toolkit.  Unless you're the app's developer, it's not
+ ***  likely you'll want to change anything in this file.
  ***/
 namespace hydrogen;
 
@@ -20,7 +21,7 @@ use hydrogen\view\engines\hydrogen\HydrogenEngine;
  ***  anywhere without changing this value.  The following example assumes that
  ***  this autoconfig file is two levels down from the root of the app.
  ***/
-Config::setBasePath(__DIR__ . "/../..");
+Config::setBasePath(__DIR__ . "/..");
 
 
 /***  Set the cache path for the application.  This directory should allow PHP

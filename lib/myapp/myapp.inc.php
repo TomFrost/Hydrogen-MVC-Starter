@@ -10,6 +10,8 @@
  * be the only thing necessary to require_once() in your index.php.
  */
 namespace myapp;
+define('HYDROGEN_AUTOCONFIG_PATH',
+	__DIR__ . '/../../config/hydrogen.autoconfig.php');
 require_once(__DIR__ . '/../hydrogen/hydrogen.inc.php');
 
 use hydrogen\common\exceptions\ClassFileNotFoundException;
