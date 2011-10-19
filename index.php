@@ -29,7 +29,7 @@
  */
 
 require_once(__DIR__ . '/lib/myapp/myapp.inc.php');
-use hydrogen\controller\Dispatcher;
+use hydrogen\controller\Router;
 use hydrogen\errorhandler\ErrorHandler;
 
 // The following line enables our error handler.  During development, it's more
@@ -39,14 +39,25 @@ use hydrogen\errorhandler\ErrorHandler;
 //ErrorHandler::attachErrorPage();
 
 // The following rules determine which controller is executed depending on
-// the URL that was requested.  See the Dispatcher documentation for details.
-Dispatcher::addHomeMatchRule('\myapp\controllers\IndexController', 'index');
-Dispatcher::addPathInfoAutoMapRule('\myapp\controllers', 'Controller');
-Dispatcher::addMatchAllRule('\myapp\controllers\ErrorController', 'error404');
+// the URL that was requested.  See the Router documentation for details.
+// There's a great tutorial right at the top of the file!
+$router = new Router();
+$router->setGlobalOverrides(array(
+	'controller' => '\myapp\controllers\%{controller|ucfirst}Controller',
+	'args' => Router::EXPAND_PARAMS
+));
+$router->request('/(:controller(/:function(/:*args)))', array(
+	'controller' => 'index',
+	'function' => 'index'
+));
+$router->catchAll(array(
+	'controller' => 'error',
+	'function' => 'error404'
+));
 
-// Now that the rules are set up, this line will tell the Dispatcher to load
+// Now that the rules are set up, this line will tell the Router to load
 // up the correct controller!  That's it-- index.php is done, and the
 // controller will take it from here.
-Dispatcher::dispatch();
+$router->start();
 
 ?>
