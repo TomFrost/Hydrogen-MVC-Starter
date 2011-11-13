@@ -43,7 +43,7 @@ use hydrogen\errorhandler\ErrorHandler;
 // There's a great tutorial right at the top of the file!
 $router = new Router();
 $router->setGlobalOverrides(array(
-	'controller' => '\myapp\controllers\%{controller|ucfirst}Controller',
+	'controller' => '\myapp\controllers\%{controller|capfirst}Controller',
 	'args' => Router::EXPAND_PARAMS
 ));
 $router->request('/(:controller(/:function(/:*args)))', array(
