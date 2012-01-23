@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (c) 2011, Frosted Design
+ * Copyright (c) 2012, Frosted Design
  * All rights reserved.
  *
  * ******
